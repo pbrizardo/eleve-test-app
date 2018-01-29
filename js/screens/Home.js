@@ -4,8 +4,18 @@ import Avatar from '../../js/components/Avatar';
 
 export default class Home extends React.Component {
 
+
 	goToProfile = () => {
-		console.log('hi');
+	}
+
+	goToRestaurants = () => {
+		this.props.navigation.navigate('Restaurants');
+	}
+
+	goToWine = () => {
+	}
+
+	goToGifts = () => {
 	}
 
 	render() {
@@ -17,7 +27,9 @@ export default class Home extends React.Component {
 					</TouchableHighlight>
 				</View>
 				<View style={styles.topNav}>
-					<Image style={styles.topNavButton} source={require('../../assets/img/restaurantButton.png')}/>
+					<TouchableHighlight onPress={this.goToRestaurants}>
+						<Image style={styles.topNavButton} source={require('../../assets/img/restaurantButton.png')}/>
+					</TouchableHighlight>
 					<TouchableHighlight onPress={this.goToWine}>
 						<Image style={styles.topNavButton} source={require('../../assets/img/wineButton.png')}/>
 					</TouchableHighlight>
@@ -46,7 +58,6 @@ export default class Home extends React.Component {
 						<Image style={styles.suggestionButton} source={require('../../assets/img/rest2.png')}/>
 					</View>
 				</View>
-
 			</ScrollView>
 		);
 	}
